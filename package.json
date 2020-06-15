@@ -1,0 +1,36 @@
+{
+	"name": "ab-photo",
+	"version": "1.0.0",
+	"description": "",
+	"private": "true",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"gulp-dev": "gulp gulpDev",
+		"gulp-dist": "gulp gulpDist",
+		"gulp-watch": "gulp watchFilesDev",
+		"gulp-css-dev": "gulp stylesDev"
+	},
+	"author": "Marek Buziak",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.10.2",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/register": "^7.10.1",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean": "^0.4.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-postcss": "^8.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-uglify": "^3.0.2",
+		"gulp-webp": "^4.0.1",
+		"node-sass": "^4.14.1"
+	},
+	"dependencies": {
+		"bulma": "^0.9.0",
+		"glightbox": "^2.0.6"
+	}
+}
