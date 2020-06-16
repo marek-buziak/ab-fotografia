@@ -69,7 +69,7 @@ export const imageMin = (done) => {
 		.pipe(imagemin([imagemin.mozjpeg({quality: 75, progressive: true}), imagemin.optipng({optimizationLevel: 5})]))
 		.pipe(dest(paths.dest + '/img'));
 
-		done();
+	done();
 };
 
 // konwersja PNG, JPEG, TIFF do WebP
