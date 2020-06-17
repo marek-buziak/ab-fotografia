@@ -4,4 +4,13 @@ body {
 	font-size: $font-size;
 	background-color: aliceblue;
 	min-height: 100vh;
+	
+	.lozad {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		height: 400px;
+		width: auto;
+		margin-bottom: 1em;
+	}
 }
