@@ -40,9 +40,10 @@ html {
 		
 		footer {
 			background-color: crimson;
+			flex-shrink: 0;
 			small {
 				width: 100%;
-				padding: 2rem;
+				padding: 2.5rem;
 				color: white;
 				text-align: center;
 			}
