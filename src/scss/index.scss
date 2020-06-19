@@ -5,10 +5,7 @@ html {
 	height: 100%;
 
 	body,
-	header,
 	main,
-	nav,
-	ul,
 	section,
 	footer
 	{
@@ -20,15 +17,7 @@ html {
 		height: 100%;
 		
 		header {
-			
-			nav {
-				ul {
-					flex-direction: column;
-					li {
-
-					}
-				}
-			}
+		
 		}
 		
 		main {
