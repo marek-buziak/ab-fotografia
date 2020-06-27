@@ -3,6 +3,9 @@
 $font-family: 'Source Sans Pro', sans-serif;
 $font-size: 16px;
 
+$ratio-16-9: 56.25%;
+$ratio-4-3: 75%;
+$cols: 3;
 
 // ### Media Breakpoints
 
@@ -13,3 +16,5 @@ $screen-lg: 992px;
 $screen-xl: 1200px;
 $screen-xxl: 1600px;
 $screen-fhd: 1920px;
+
+$max-wrapper-width: 1536px;

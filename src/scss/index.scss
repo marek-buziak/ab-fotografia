@@ -1,9 +1,32 @@
 @import 'variables';
+
+@media (max-width: $screen-lg - 1) {
+	.lp-mobile {
+		display: flex;
+	}
+	
+	.lp-desktop {
+		display: none;
+		pointer-events: none;
+	}
+}
+			
+@media (min-width: $screen-lg) {
+	.lp-mobile {
+		display: none;
+		pointer-events: none;
+	}
+
+	.lp-desktop {
+		display: flex;
+	}
+}
+
+
 html {
 	font-family: $font-family;
 	font-size: $font-size;
-	height: 100vh;
-	overflow: hidden;
+	/*height: 100%;*/
 
 	body,
 	footer
@@ -13,36 +36,290 @@ html {
 
 	body {
 		flex-direction: column;
-		height: 100%;
+		/*height: 100%;*/
+		/*min-height: 150vh;*/
+		overflow-x: hidden;
 		
-		header {
+		/*@media*/
 		
+		.navbar {
+			overflow: hidden;
 		}
 		
 		main {
-			flex: 1 0 auto;
-			
-			section.lp-mobile {
-/*				width: 100%;
-				height: 100%;*/
-				@media (min-width: $screen-lg) {
-					 display: none;
+			/*flex: 1 0 auto;*/
+			/*height: 100%;*/
+			/*height: calc(100vh + 200px);*/
+			height: 100vh;
+			width: 100%;
+			max-width: $max-wrapper-width;
+			margin: 0 auto;
+
+
+
+
+
+			.lp-mobile {
+				flex-direction: column;
+				height: 100%;
+				/*max-width: $max-wrapper-width;*/
+				margin: 0 auto;
+
+				// ### MOBILE ###
+
+				/*@media (max-width: $screen-lg - 1) {*/
+				.row {
+					height: calc(100% / 3);
+					display: flex;
+
+					.col {
+						height: 100%;
+						width: calc(100% / 3);
+					}
 				}
+
+				// kolumna druga wiersza 1 oraz 3
+				.row-1,
+				.row-3 {
+					.col-2 {
+						display: flex;
+						flex-direction: column;
+
+						.top,
+						.bottom {
+							height: 50%;
+						}
+					}
+				}
+
+				// ukrycie kolumny drugiej wiersza 2
+				.row-2 {
+
+					.col-1,
+					.col-2 {
+						width: 50%;
+					}
+				}
+
+				// nadanie właściwości "background-*" dla wszystkich kafli
+				/*					.col-1,
+									.col-2,
+									.col-3
+									.top,
+									.bottom,
+									.logo-mobile {
+										background-repeat: no-repeat;
+										background-position: center 40%;
+										background-size: cover;
+				
+									}*/
+
+				.row-1,
+				.row-2,
+				.row-3 {
+					.col-1,
+					.col-2,
+					.col-3
+					.top,
+					.bottom,
+					.logo-mobile {
+						background-repeat: no-repeat;
+						background-position: center 40%;
+						background-size: cover;
+
+					}
+				}
+
+				// sprecyzowanie obrazu tła dla każdego kafla
+				.row-1 {
+					.col-1 {
+						background-image: url('../../dist/img/lp/5.jpg');
+					}
+
+					.col-2 {
+
+						.top {
+							background-image: url('../../dist/img/lp/7.jpg');
+						}
+
+						.bottom {
+							background-image: url('../../dist/img/lp/9.jpg');
+						}
+					}
+
+					.col-3 {
+						background-image: url('../../dist/img/lp/4.jpg');
+					}
+				}
+
+				.row-2 {
+
+					.logo-mobile {
+
+					}
+
+					.col-1 {
+						background-image: url('../../dist/img/lp/10.jpg');
+					}
+
+					.col-2 {
+						background-image: url('../../dist/img/lp/6.jpg');
+					}
+				}
+
+				.row-3 {
+					.col-1 {
+						background-image: url('../../dist/img/lp/8.jpg');
+					}
+
+					.col-2 {
+
+						.top {
+							background-image: url('../../dist/img/lp/2.jpg');
+						}
+
+						.bottom {
+							background-image: url('../../dist/img/lp/3.jpg');
+						}
+					}
+
+					.col-3 {
+						background-image: url('../../dist/img/lp/1.jpg');
+					}
+				}
+
+				/*}*/
+
+				// ### DESKTOP ### póki co tylko projekt wersji na mobile (FIGMA), przeskalowany na desktop
+
+				/*				@media (min-width: $screen-lg) {
+									
+								}*/
 			}
-			
-			section.lp-desktop {
-/*				width: 100%;
-				height: 100%;*/
-				display: none;
-				@media (min-width: $screen-lg) {
-					display: block;
+
+
+
+			.lp-desktop {
+
+				height: 100%;
+				
+				
+				.col-1,
+				.col-3 {
+					width: 25%;
+					display: flex;
+					flex-direction: column;
+					
+					.row-1,
+					.row-2 {
+						height: 50%;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					
+					@media (min-width: $screen-xl) {
+						/*width: 20%;*/
+					}
+				}
+				
+				.col-1 {
+
+					.row-1 {
+						background-image: url('../../dist/img/lp/5.jpg');
+					}
+					.row-2 {
+						background-image: url('../../dist/img/lp/8.jpg');
+					}
+				}
+
+				.col-2 {
+					width: 50%;
+
+					.row-1,
+					.row-3 {
+						height: 40%;
+						display: flex;
+						/*width: 50%;*/
+						/*flex-direction: column;*/
+
+						.inner-row-1,
+						.inner-row-2 {
+							/*height: 50%;*/
+							width: 50%;
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-size: cover;
+						}
+					}
+					
+					.row-1 {
+						.inner-row-1 {
+							background-image: url('../../dist/img/lp/7.jpg');
+							background-position: 25% center;
+						}
+						.inner-row-2 {
+							background-image: url('../../dist/img/lp/9.jpg');
+						}
+					}
+					
+					.row-3 {
+						.inner-row-1 {
+							background-image: url('../../dist/img/lp/3.jpg');
+						}
+						.inner-row-2 {
+							background-image: url('../../dist/img/lp/2.jpg');
+						}
+					}
+
+					.row-2 {
+						height: 20%;
+						display: flex;
+
+						.inner-col-1,
+						.inner-col-2,
+						.inner-col-3 {
+							width: calc(100% / 3);
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-size: cover;
+						}
+						
+						.inner-col-1 {
+							background-image: url('../../dist/img/lp/10.jpg');
+						}
+						
+						.inner-col-2 {
+							background-image: url('../../dist/img/lp/ab-black.png');
+							background-size: 75%;
+						}
+						
+						.inner-col-3 {
+							background-image: url('../../dist/img/lp/6.jpg');
+						}
+					}
+					
+					@media (min-width: $screen-xl) {
+						/*width: 60%;*/
+					}
+				}
+
+				.col-3 {
+
+					.row-1 {
+						background-image: url('../../dist/img/lp/4.jpg');
+					}
+
+					.row-2 {
+						background-image: url('../../dist/img/lp/1.jpg');
+					}
 				}
 			}
 		}
 		
 		footer {
 			background-color: crimson;
-			flex-shrink: 0;
+			/*flex-shrink: 0;*/
 			small {
 				width: 100%;
 				padding: 2.5rem;
@@ -50,7 +327,6 @@ html {
 				text-align: center;
 			}
 		}
-
 	}
 
 	// stylowanie testowe dla galerii zdjęć - lazy loading
